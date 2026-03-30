@@ -63,9 +63,9 @@ export default function Home({ setPage }) {
   const marqueeItems = ["Google Ads", "Meta Ads", "SEO", "Social Media Marketing", "WhatsApp Campaigns", "Brand Strategy", "Lead Generation", "Content Marketing", "Website Development", "Email Marketing", "Video Ads", "Promotions"];
 
   return (
-    <div style={{ paddingTop: "68px" }}>
+    <div style={{ paddingTop: "68px", background: C.dark }}>
       {/* Hero */}
-      <div style={{
+      <div className="hero-shell" style={{
         background: C.dark, padding: "5.5rem 2.5rem 5rem",
         position: "relative", overflow: "hidden", minHeight: "580px",
         display: "flex", alignItems: "center",
@@ -75,8 +75,8 @@ export default function Home({ setPage }) {
         <div style={{ position: "absolute", inset: 0, backgroundImage: `radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)`, backgroundSize: "28px 28px", pointerEvents: "none" }} />
         
         <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", width: "100%" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
-            <div>
+          <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+            <div className="hero-copy">
               <div className="fade-up" style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
                 background: "rgba(0,192,127,0.1)", border: `1px solid rgba(0,192,127,0.3)`,
@@ -85,16 +85,16 @@ export default function Home({ setPage }) {
                 <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: C.green, animation: "pulse-green 1.5s infinite", flexShrink: 0 }} />
                 <span style={{ fontSize: "0.72rem", color: C.green, fontWeight: "600", letterSpacing: "0.1em", textTransform: "uppercase" }}>End-to-End Business Growth</span>
               </div>
-              <h1 className="fade-up-1" style={{
+              <h1 className="fade-up-1 hero-title" style={{
                 fontFamily: "'Syne', sans-serif",
                 fontSize: "clamp(2rem, 4.5vw, 3.5rem)", fontWeight: "800",
                 color: C.white, lineHeight: 1.1, marginBottom: "1.25rem",
-              }}>We Grow Your<br /><span style={{ color: C.green }}>Business</span> with<br />Digital Power</h1>
-              <p className="fade-up-2" style={{
+              }}>We Grow <span style={{ color: C.green }}>Business</span><br />with Digital Power</h1>
+              <p className="fade-up-2 hero-subtext" style={{
                 color: "rgba(255,255,255,0.55)", fontSize: "1rem",
-                lineHeight: 1.75, marginBottom: "2.25rem", maxWidth: "440px",
+                lineHeight: 1.75, marginBottom: "2.25rem", maxWidth: "520px",
               }}>From Google Ads to brand building, social media to lead generation — InstBusinessGrow delivers complete digital solutions that drive real, measurable results.</p>
-              <div className="fade-up-3" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+              <div className="fade-up-3 hero-cta" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <button className="green-btn" onClick={() => setPage("Contact")} style={{
                   background: C.green, color: C.dark, border: "none",
                   padding: "0.9rem 2rem", borderRadius: "10px", fontWeight: "700",
@@ -110,7 +110,7 @@ export default function Home({ setPage }) {
             </div>
 
             {/* Stats grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+            <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
               {[["500+", "Businesses Grown", C.green],["10x", "Average ROI", C.accent],["15+", "Service Verticals", C.blue],["5★", "Client Satisfaction", C.yellow],].map(([val, label, color]) => (
                 <div key={label} style={{
                   background: C.darkCard, borderRadius: "16px", padding: "1.75rem",
